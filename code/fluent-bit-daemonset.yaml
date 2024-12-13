@@ -1,0 +1,41 @@
+apiVersion: apps/v1
+kind: DaemonSet
+metadata:
+  name: fluent-bit
+  namespace: logging
+  labels:
+    app: fluent-bit-logging
+spec:
+  selector:
+    matchLabels:
+      app: fluent-bit-logging
+  template:
+    metadata:
+      labels:
+        app: fluent-bit-logging
+    spec:
+      containers:
+      - name: fluent-bit
+        image: fluent/fluent-bit:latest
+        volumeMounts:
+        - name: log-volume
+          mountPath: /var/log
+        - name: config-volume
+          mountPath: /fluent-bit/etc/
+      - name: k8s-events-collector
+        image: bitnami/kubectl:latest
+        command: ["/bin/sh"]
+        args: ["-c", "while true; do kubectl get events --all-namespaces > /var/log/kube-events.log; sleep 60; done"]
+        securityContext:
+          runAsUser: 0
+        volumeMounts:
+        - name: log-volume
+          mountPath: /var/log
+
+      volumes:
+      - name: log-volume
+        hostPath:
+          path: /var/log
+      - name: config-volume
+        configMap:
+          name: fluent-bit-config

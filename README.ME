@@ -1,0 +1,70 @@
+1. run makefile on all three nodes
+
+after this you need to set up kubernetes cluster by giving commands:
+
+#disable swap
+sudo swapoff -a
+sudo sed -i '/ swap / s/^\(.*\)$/#\1/g' /etc/fstab
+
+#inialise cluster
+kubeadm init
+
+#add owner
+mkdir -p $HOME/.kube
+sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
+sudo chown $(id -u):$(id -g) $HOME/.kube/config
+
+#install callico and metrics-server
+kubectl apply -f https://raw.githubusercontent.com/coreos/flannel/master/Documentation/kube-flannel.yml --validate=false
+kubectl apply -f https://github.com/kubernetes-sigs/metrics-server/releases/latest/download/components.yaml --validate=false
+
+#change metrics server deployment to ignore TLS
+KUBE_EDITOR="nano" kubectl edit deployment metrics-server -n kube-system
+        command:
+        - /metrics-server
+        - --kubelet-insecure-tls
+        - --kubelet-preferred-address-types=InternalIP
+
+#restart metrics-server deployment
+kubectl rollout restart deployment metrics-server -n kube-system
+
+
+2. run following on node 0 on separate terminals:
+uvicorn middleware:app --host 0.0.0.0 --port 6666
+# above command will start middleware
+python3 local_controller.py 0
+# above command will start local_controller for node 0
+python3 global_controller.py
+# above command will start global_controller
+
+3. run this on node1:
+python3 local_controller.py 1
+# above command will start local_controller for node 1
+
+4. run this on node2:
+python3 local_controller.py 2
+# above command will start local_controller for node 2
+
+5. Logging:
+
+# install heml
+curl -fsSL -o get_helm.sh https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3
+$ chmod 700 get_helm.sh
+$ ./get_helm.sh
+
+# install fluentbit
+helm repo add fluent https://fluent.github.io/helm-charts
+helm upgrade --install fluent-bit fluent/fluent-bit
+
+# setup namespace
+kubectl create namespace logging
+
+# apply yaml files
+kubectl apply -f fluent-bit-config.yaml
+kubectl apply -f fluent-bit-daemonset.yaml
+
+#check deployment
+kubectl get pods -n logging
+
+# get logs
+sudo kubectl logs -n logging [Pod name, like fluent-bit-xxx]

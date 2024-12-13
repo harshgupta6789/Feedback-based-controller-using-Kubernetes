@@ -1,0 +1,102 @@
+Task 1 d
+stress-ng --cpu 2 --io 4 --vm 4 --vm-bytes 4G --timeout 57s
+stress-ng --cpu 1 --io 4 --vm 4 --vm-bytes 4G --timeout 42s
+stress-ng --cpu 1 --io 4 --vm 4 --vm-bytes 4G --timeout 57s
+stress-ng --cpu 2 --io 4 --vm 5 --vm-bytes 4G --timeout 54s
+stress-ng --cpu 1 --io 4 --vm 4 --vm-bytes 4G --timeout 51s
+stress-ng --cpu 2 --io 4 --vm 4 --vm-bytes 4G --timeout 53s
+stress-ng --cpu 1 --io 4 --vm 4 --vm-bytes 4G --timeout 60s
+stress-ng --cpu 1 --io 4 --vm 4 --vm-bytes 4G --timeout 60s
+stress-ng --cpu 2 --io 4 --vm 4 --vm-bytes 4G --timeout 56s
+stress-ng --cpu 1 --io 4 --vm 5 --vm-bytes 4G --timeout 50s
+stress-ng --cpu 2 --io 4 --vm 4 --vm-bytes 4G --timeout 40s
+stress-ng --cpu 1 --io 4 --vm 5 --vm-bytes 4G --timeout 53s
+stress-ng --cpu 2 --io 4 --vm 4 --vm-bytes 4G --timeout 52s
+stress-ng --cpu 2 --io 4 --vm 5 --vm-bytes 4G --timeout 39s
+stress-ng --cpu 2 --io 4 --vm 4 --vm-bytes 4G --timeout 57s
+stress-ng --cpu 2 --io 4 --vm 4 --vm-bytes 4G --timeout 34s
+stress-ng --cpu 2 --io 4 --vm 4 --vm-bytes 4G --timeout 53s
+stress-ng --cpu 2 --io 4 --vm 5 --vm-bytes 4G --timeout 59s
+stress-ng --cpu 1 --io 4 --vm 4 --vm-bytes 4G --timeout 58s
+stress-ng --cpu 2 --io 4 --vm 5 --vm-bytes 4G --timeout 46s
+
+Task 1 f
+stress-ng --cpu 2 --io 4 --vm 4 --vm-bytes 4G --timeout 65s
+stress-ng --cpu 1 --io 4 --vm 4 --vm-bytes 4G --timeout 60s
+stress-ng --cpu 2 --io 4 --vm 4 --vm-bytes 4G --timeout 62s
+stress-ng --cpu 1 --io 4 --vm 4 --vm-bytes 4G --timeout 58s
+stress-ng --cpu 2 --io 4 --vm 4 --vm-bytes 4G --timeout 64s
+stress-ng --cpu 2 --io 4 --vm 4 --vm-bytes 4G --timeout 66s
+stress-ng --cpu 1 --io 4 --vm 4 --vm-bytes 4G --timeout 63s
+stress-ng --cpu 2 --io 4 --vm 4 --vm-bytes 4G --timeout 61s
+stress-ng --cpu 1 --io 4 --vm 4 --vm-bytes 4G --timeout 57s
+stress-ng --cpu 2 --io 4 --vm 4 --vm-bytes 4G --timeout 65s
+stress-ng --cpu 1 --io 4 --vm 4 --vm-bytes 4G --timeout 59s
+stress-ng --cpu 2 --io 4 --vm 4 --vm-bytes 4G --timeout 63s
+stress-ng --cpu 1 --io 4 --vm 4 --vm-bytes 4G --timeout 58s
+stress-ng --cpu 2 --io 4 --vm 4 --vm-bytes 4G --timeout 62s
+stress-ng --cpu 1 --io 4 --vm 4 --vm-bytes 4G --timeout 60s
+stress-ng --cpu 2 --io 4 --vm 4 --vm-bytes 4G --timeout 67s
+stress-ng --cpu 1 --io 4 --vm 4 --vm-bytes 4G --timeout 65s
+stress-ng --cpu 2 --io 4 --vm 4 --vm-bytes 4G --timeout 63s
+stress-ng --cpu 1 --io 4 --vm 4 --vm-bytes 4G --timeout 59s
+stress-ng --cpu 2 --io 4 --vm 4 --vm-bytes 4G --timeout 68s
+stress-ng --cpu 1 --io 4 --vm 4 --vm-bytes 4G --timeout 57s
+stress-ng --cpu 2 --io 4 --vm 4 --vm-bytes 4G --timeout 66s
+stress-ng --cpu 1 --io 4 --vm 4 --vm-bytes 4G --timeout 64s
+stress-ng --cpu 2 --io 4 --vm 4 --vm-bytes 4G --timeout 60s
+stress-ng --cpu 1 --io 4 --vm 4 --vm-bytes 4G --timeout 62s
+stress-ng --cpu 2 --io 4 --vm 4 --vm-bytes 4G --timeout 65s
+stress-ng --cpu 1 --io 4 --vm 4 --vm-bytes 4G --timeout 59s
+stress-ng --cpu 2 --io 4 --vm 4 --vm-bytes 4G --timeout 63s
+stress-ng --cpu 1 --io 4 --vm 4 --vm-bytes 4G --timeout 58s
+stress-ng --cpu 2 --io 4 --vm 4 --vm-bytes 4G --timeout 64s
+
+Task 2 f
+stress-ng --cpu 1 --io 4 --vm 4 --vm-bytes 4G --timeout 57s
+stress-ng --cpu 2 --io 4 --vm 4 --vm-bytes 4G --timeout 62s
+stress-ng --cpu 1 --io 4 --vm 4 --vm-bytes 4G --timeout 59s
+stress-ng --cpu 2 --io 4 --vm 4 --vm-bytes 4G --timeout 63s
+stress-ng --cpu 1 --vm 4 --vm-bytes 4G --timeout 58s
+stress-ng --cpu 2 --vm 4 --vm-bytes 4G --timeout 65s
+stress-ng --cpu 1 --io 4 --vm 4 --vm-bytes 4G --timeout 54s
+stress-ng --cpu 2 --vm 4 --vm-bytes 4G --timeout 60s
+stress-ng --cpu 1 --io 4 --vm 4 --vm-bytes 4G --timeout 56s
+stress-ng --cpu 2 --io 4 --vm 4 --vm-bytes 4G --timeout 64s
+stress-ng --cpu 1 --vm 4 --vm-bytes 4G --timeout 55s
+stress-ng --cpu 2 --vm 4 --vm-bytes 4G --timeout 66s
+stress-ng --cpu 1 --io 4 --vm 4 --vm-bytes 4G --timeout 53s
+stress-ng --cpu 2 --vm 4 --vm-bytes 4G --timeout 61s
+stress-ng --cpu 1 --io 4 --vm 4 --vm-bytes 4G --timeout 57s
+stress-ng --cpu 2 --io 4 --vm 4 --vm-bytes 4G --timeout 65s
+stress-ng --cpu 1 --vm 4 --vm-bytes 4G --timeout 52s
+stress-ng --cpu 2 --io 4 --vm 4 --vm-bytes 4G --timeout 67s
+stress-ng --cpu 1 --io 4 --vm 4 --vm-bytes 4G --timeout 51s
+stress-ng --cpu 2 --vm 4 --vm-bytes 4G --timeout 62s
+stress-ng --cpu 1 --io 4 --vm 4 --vm-bytes 4G --timeout 50s
+stress-ng --cpu 2 --io 4 --vm 4 --vm-bytes 4G --timeout 70s
+stress-ng --cpu 1 --vm 4 --vm-bytes 4G --timeout 58s
+stress-ng --cpu 2 --io 4 --vm 4 --vm-bytes 4G --timeout 69s
+stress-ng --cpu 1 --io 4 --vm 4 --vm-bytes 4G --timeout 56s
+stress-ng --cpu 2 --vm 4 --vm-bytes 4G --timeout 63s
+stress-ng --cpu 1 --io 4 --vm 4 --vm-bytes 4G --timeout 55s
+stress-ng --cpu 2 --io 4 --vm 4 --vm-bytes 4G --timeout 68s
+stress-ng --cpu 1 --vm 4 --vm-bytes 4G --timeout 52s
+stress-ng --cpu 2 --io 4 --vm 4 --vm-bytes 4G --timeout 66s
+
+Task 2 g
+stress-ng --cpu 2 --io 4 --vm 4 --vm-bytes 4G --timeout 65s
+stress-ng --cpu 1 --io 4 --vm 4 --vm-bytes 4G --timeout 62s
+stress-ng --cpu 2 --io 4 --vm 4 --vm-bytes 4G --timeout 60s
+stress-ng --cpu 1 --io 4 --vm 4 --vm-bytes 4G --timeout 57s
+stress-ng --cpu 2 --io 4 --vm 4 --vm-bytes 4G --timeout 64s
+stress-ng --cpu 1 --io 4 --vm 4 --vm-bytes 4G --timeout 65s
+stress-ng --cpu 2 --io 4 --vm 4 --vm-bytes 4G --timeout 63s
+stress-ng --cpu 1 --io 4 --vm 4 --vm-bytes 4G --timeout 60s
+stress-ng --cpu 2 --io 4 --vm 4 --vm-bytes 4G --timeout 68s
+stress-ng --cpu 1 --io 4 --vm 4 --vm-bytes 4G --timeout 57s
+stress-ng --cpu 1 --io 4 --vm 4 --vm-bytes 4G --timeout 59s
+stress-ng --cpu 2 --io 4 --vm 4 --vm-bytes 4G --timeout 65s
+stress-ng --cpu 1 --io 4 --vm 4 --vm-bytes 4G --timeout 60s
+stress-ng --cpu 2 --io 4 --vm 4 --vm-bytes 4G --timeout 64s
+stress-ng --cpu 1 --io 4 --vm 4 --vm-bytes 4G --timeout 62s
