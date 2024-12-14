@@ -99,4 +99,4 @@ Using the PI controller, I was able to bring the system closer to the reference 
 2. When CPU utilisation goes up, the Global Controller joins the cluster
 3. When all jobs in a node are completed, the Global Controller removes that node from the cluster, making it as a hot-standby node
 
-![CPU vs Time graph.png]
+![CPU vs Time graph.png](CPU vs Time graph.png)
