@@ -1,7 +1,7 @@
 # Project description:
 This project implements a PI controller as a feedback controller for managing a Kubernetes node. The controller dynamically adjusts the MAXPODS count based on the node's CPU utilization, using a discrete linear differential equation modeled with the Black Box technique. The IT infrastructure consists of Kubernetes for container orchestration and Docker for container runtime. Communication between components is facilitated through APIs built with FastAPI, and data collection is performed via Kubernetes APIs. Logging across nodes is managed using Fluent Bit. This project has been tested in a CloudLab environment with the following node specifications: Operating System: Ubuntu 22.04.5 LTS, Memory: 64 GB RAM.
 
-**Outline of the description:**
+**Outline:**
 1. [Model the local controller](#model-the-local-controller)
 2. [System Implementation](#system-implementation)
 3. [Important Notes](#important-notes)
