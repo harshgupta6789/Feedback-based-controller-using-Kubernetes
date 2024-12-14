@@ -62,9 +62,9 @@ Run the following command on master node:
 
 **Step 2: start the local controllers**  
 Run the following commands in node0, node1 and node2 respectively:  
-node0: `python3 local_controller.py 0`  
-node1: `python3 local_controller.py 1`  
-node2: `python3 local_controller.py 2`
+`python3 local_controller.py 0`  
+`python3 local_controller.py 1`  
+`python3 local_controller.py 2`
 
 **Step 3: start the global controller**  
 node10: `python3 global_controller.py`
