@@ -102,5 +102,5 @@ Using the PI controller, I was able to bring the system closer to the reference 
 CPU vs Time graph:
 ![CPU vs Time graph](https://github.com/harshgupta6789/Feedback-based-controller-using-Kubernetes/blob/master/CPU%20vs%20Time%20graph.png)
 
-No of nodes vs Time graph:
+No. of nodes vs Time graph:
 ![No of nodes vs Time graph](https://github.com/harshgupta6789/Feedback-based-controller-using-Kubernetes/blob/master/No%20of%20nodes%20vs%20Time%20graph.png)
