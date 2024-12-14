@@ -73,18 +73,18 @@ node10: `python3 global_controller.py`
 Logging is a crucial part of any server architecture. Fluent-bit is used here to collect logs from each node. Following are the installation steps:  
 
 **Install helm:**  
-`curl -fsSL -o get_helm.sh https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3  
-$ chmod 700 get_helm.sh  
-$ ./get_helm.sh`
+`curl -fsSL -o get_helm.sh https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3`
+`$ chmod 700 get_helm.sh`
+`$ ./get_helm.sh`
 
 **Install fluent-bit:**  
-`helm repo add fluent https://fluent.github.io/helm-charts  
-helm upgrade --install fluent-bit fluent/fluent-bit`
+`helm repo add fluent https://fluent.github.io/helm-charts`
+`helm upgrade --install fluent-bit fluent/fluent-bit`
 
 **Setup new namespace and start the logging pods:**  
 `kubectl create namespace logging`  
-`kubectl apply -f fluent-bit-config.yaml  
-kubectl apply -f fluent-bit-daemonset.yaml`
+`kubectl apply -f fluent-bit-config.yaml`
+`kubectl apply -f fluent-bit-daemonset.yaml`
 
 **Check deployment:**  
 `kubectl get pods -n logging`
