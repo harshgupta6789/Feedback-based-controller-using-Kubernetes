@@ -33,7 +33,7 @@ The system contains 3 major components as follows:
 It runs in the master node. The global controller fetches jobs periodically and assigns them to the 3 local controllers. It measures the cluster-wide CPU utilisation, and if it is over 80% (which is our reference input), it joins a new node to the cluster. It also has the capability to spin down unnecessary and inactive nodes, thus saving cost of the additional node.
 
 **Local controllers:**  
-An instance of local cotnroller runs on each node. A local controller is used to measure the node CPU utilisation periodically, and vary the MAXPODS using the PI controller. At a given time, a node can allow only MAXPODS workloads. It will reject all further jobs.
+An instance of local controller runs on each node. A local controller is used to measure the node CPU utilisation periodically, and vary the MAXPODS using the PI controller. At a given time, a node can allow only MAXPODS workloads. It will reject all further jobs.
 
 **Middleware:**  
 It is the control center of the system, which exposes several APIs for both the controllers. It uses the Kubernetes APIs to measure node CPU utilisation, cluster wide CPU utilisation, number of active nodes, number of pods running in a cluster, etc.
@@ -67,7 +67,7 @@ Run the following commands in node0, node1 and node2 respectively:
 `python3 local_controller.py 2`
 
 **Step 3: start the global controller**  
-node10: `python3 global_controller.py`
+node0: `python3 global_controller.py`
 
 ## Logging:
 Logging is a crucial part of any server architecture. Fluent-bit is used here to collect logs from each node. Following are the installation steps:  
@@ -86,17 +86,17 @@ Logging is a crucial part of any server architecture. Fluent-bit is used here to
 `kubectl apply -f fluent-bit-config.yaml`
 `kubectl apply -f fluent-bit-daemonset.yaml`
 
-**Check deployment:**  
+**Check deployment:**
 `kubectl get pods -n logging`
 
-**Get logs:**  
+**Get logs:**
 `sudo kubectl logs -n logging [Pod name, like fluent-bit-xxx]`
 
 ## Observations:
 Using the PI controller, I was able to bring the system closer to the reference input over time. I was able to simulate the following:
-1. The Local Controller increases and decreases the value of MAX_PODS  
-2. When CPU utilisation goes up, the Global Controller joins the cluster  
-3. When all jobs in a node are completed, the Global Controller removes that node from the cluster, making it as a hot-standby node  
+1. The Local Controller increases and decreases the value of MAX_PODS
+2. When CPU utilisation goes up, the Global Controller joins a node to the cluster
+3. When all jobs in a node are completed, the Global Controller removes that node from the cluster, making it as a hot-standby node
 
 **CPU vs Time graph:**  
 ![CPU vs Time graph](https://github.com/harshgupta6789/Feedback-based-controller-using-Kubernetes/blob/master/CPU%20vs%20Time%20graph.png)
